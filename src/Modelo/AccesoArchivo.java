@@ -8,11 +8,6 @@ public class AccesoArchivo {
     String ruta = "Datos.txt";
     String texto;
     
-    
-    /** 
-     * Crea un String con 5000 numeros los cuales se guardan con salto de linea
-     * @return String
-     */
     public String numeros(){
         Random rand = new Random();
         String num = "";
@@ -22,9 +17,6 @@ public class AccesoArchivo {
         return num;
     }
     
-    /** 
-     * Crea o modifica el archivo para generar los 5000 numeros para ser utilizados posteriormente
-     */
     public void generarNumeros(){
         FileWriter fw;
         PrintWriter pw;
@@ -38,15 +30,8 @@ public class AccesoArchivo {
         }
     }
     
-    
-    /** 
-     * Una funcion la cual extrae n cantidad de nuemros del archivo y lo ingresa en un arrayList
-     * el cual es retornado.
-     * @param cantidadNumeros Solicita la cantidad de numeros que desea extraer del archivo
-     * @return ArrayList<Integer>
-     */
-    public ArrayList<Integer> obtenerNumeros(int cantidadNumeros){
-        ArrayList<Integer> numeros = new ArrayList<>();
+    public Integer[] obtenerNumeros(int cantidadNumeros){
+        Integer[] n = new Integer[cantidadNumeros];
         File f;
         FileReader fr;
         BufferedReader br;
@@ -58,7 +43,7 @@ public class AccesoArchivo {
             int contLineas = 0;
             while((lineas = br.readLine()) != null){
                 if(cantidadNumeros != contLineas){
-                    numeros.add(Integer.parseInt(lineas));
+                    n[contLineas] = Integer.parseInt(lineas);
                 }else{
                     break;
                 }
@@ -67,6 +52,6 @@ public class AccesoArchivo {
         } catch (Exception e) {
             throw new Error("Error al leer el archivo");
         }
-        return numeros;
+        return n;
     }
 }
