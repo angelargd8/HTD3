@@ -2,18 +2,15 @@ package Modelo;
 
 public class RadixSort implements ISort {
     
-    @Override
-    public boolean compareTo(Object o) {
-        return false;
-    }
 
     @Override
-    public void sort(Comparable[] list) {
+    public Comparable[] sort(Comparable[] list) {
         int max = maximo(list);
         int largo = list.length;
         for(int n = 1; (max/n) > 0; n*=10){
             countingS(list, largo, n, max);
         }
+        return list;
     }
     
     public int maximo(Comparable[] list){
@@ -32,7 +29,7 @@ public class RadixSort implements ISort {
         for(int i =0;i<largo;i++){
             contador[i] = 0;
         }
-        
+
         for(int i =0;i<largo;i++){
             int posicion = (((int)(list[i]))/numeroPornumero)%10;
             contador[posicion]++;
