@@ -3,16 +3,16 @@ package Modelo;
 //Algoritmos y estructuras de datos CC2016
 // HDT3
 public class GnomeSort {
-    private static void gnomeSrt(int[] arr) {
+    public static void gnomeSrt(Comparable[] list) {
         int i = 1;
-        int n = arr.length;
+        int n = list.length;
         while (i < n) {
-            if (i == 0 || arr[i - 1] <= arr[i]) {
+            if (i == 0 || list[i - 1].compareTo(list[i])<=0) {
                 i++;
             } else {
-                int tp = arr[i];
-                arr[i] = arr[i - 1];
-                arr[--i] = tp;
+                Comparable tp = list[i];
+                list[i] = list[i - 1];
+                list[--i] = tp;
             }
         }
     }

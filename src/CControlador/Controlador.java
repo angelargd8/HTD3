@@ -9,9 +9,18 @@
 package CControlador;
 import java.util.ArrayList;
 
+import Modelo.AccesoArchivo;
+import Modelo.GnomeSort;
+
 public class Controlador{
   
-    
+    public void SortFileGnome(){
+        AccesoArchivo  acceso = new AccesoArchivo();
+        Integer [] numeros = acceso.obtenerNumeros(5000);
+        GnomeSort gnomeSort = new GnomeSort();
+        gnomeSort.gnomeSrt(numeros);
+
+        }
 
     
 }
