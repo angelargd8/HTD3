@@ -9,13 +9,19 @@
  */
 
 package CVista;
+
+import CControlador.Controlador;
+
 public class Main {
     
     /** 
      * @param args
      */
     public static void main(String[] args) {
-        MostrarMenu mostrarMenu= new MostrarMenu();
-        mostrarMenu.MostrarPrograma();
+        Controlador controlador = new Controlador();
+        //esto estaba en mostrar menu:
+        /*controlador.SortFileGnome();
+        System.out.println("Has realizado el Gnome Sort");*/
+        
     }
 }
