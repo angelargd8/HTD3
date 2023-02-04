@@ -1,26 +1,23 @@
-/*
- * Autores:
- *          Angela García #22869
- *          Augusto Sanic #20717
-            Sergio Palacios #22808
- * fecha de entrega:20/11/2022
- * catedratico: Ludwing Cano
- */
 package CVista;
 
+import java.net.NetPermission;
+
 import CControlador.Controlador;
+import Modelo.MergeSort;
 
 
 public class MostrarMenu {
     Vista vista;
     Controlador controlador;
     int opcion=0;
+    //MergeSort mergeSort;
 
 
 
     public MostrarMenu(){
         vista = new Vista();
         controlador= new Controlador();
+        //mergeSort = new MergeSort();
         
     }
     public void MostrarPrograma(){
@@ -30,20 +27,21 @@ public class MostrarMenu {
 
         while (opcion!=8){
             opcion= vista.SeleccioneMenu("\nBienvenido al \n Ingrese una opción:\n1.  \n2.  \n3. \n4.  \n5. \n6. \n7. \n8. salir");
-/////////////1. Encender el radio//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////1. //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             if (opcion==1){
             }
 /////////////2. //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             try{
                 if (opcion==2){
-                Controlador controlador = new Controlador();
                 controlador.SortFileGnome();
                 System.out.println("Has realizado el Gnome Sort");
                 break;
                 }
     /////////// ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 else if (opcion==3){
-                    
+                //solo era para probar xd
+                //Integer array[] = {1,5,3,4};
+                //mergeSort.MergeSortt(array);
 
                 }
     /////////////.  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
