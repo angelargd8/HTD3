@@ -1,10 +1,12 @@
 /*
  * Autores:
+ *          Francis Aguilar #22243
+ *          Gerardo Pineda #22880
+ *          Rodrigo Mansilla #22661
  *          Angela García #22869
- *          Augusto Sanic #20717
-            Sergio Palacios #22808
- * fecha de entrega:20/11/2022
- * catedratico: Ludwing Cano
+ * catedratico: Douglas Barrios
+ * Auxiliares: Fernanda Esquivel
+ *             Francisco Castilloo
  */
 package CControlador;
 import java.util.ArrayList;
@@ -22,6 +24,8 @@ public class Controlador{
     MergeSort mergeSort;
     QuikSort quikSort;
     RadixSort radixSort;
+    long TiempoDeInicio; //la fer me dijo q teoricamente esto puede valer como profiler entonces c va
+    long TiempoFinal;
   
     public Controlador(){
         gnomeSort = new GnomeSort();
@@ -34,23 +38,33 @@ public class Controlador{
     public void CorrerSorts(){
         AccesoArchivo  acceso = new AccesoArchivo();
         Integer [] numeros = acceso.obtenerNumeros(5000);   
-
-        System.out.println("GnomeSort:");
-        gnomeSort.gnomeSrt(numeros);
-
-        System.out.println("BubbleSort:");
-        bubbleSort.sort(numeros);
-
-        System.out.println("MergeSort:");
-        mergeSort.MergeSortt(numeros);
-
-        System.out.println("QuikSort:");
-        //me tira error pipipi
-        quikSort.sort(numeros, 0 , numeros.length-1);
         
-        System.out.println("RadixSort:");
-        radixSort.maximo(numeros);
+        TiempoDeInicio = System.nanoTime();
+        gnomeSort.gnomeSrt(numeros);
+        TiempoFinal = System.nanoTime();
+        System.out.println("GnomeSort:"+ (TiempoDeInicio-TiempoFinal)+ " nanosegundos");
 
+        TiempoDeInicio = System.nanoTime();
+        bubbleSort.sort(numeros);
+        TiempoFinal = System.nanoTime();
+        System.out.println("BubbleSort:"+ (TiempoDeInicio-TiempoFinal)+ " nanosegundos");
+
+        TiempoDeInicio = System.nanoTime();
+        mergeSort.MergeSortt(numeros);
+        TiempoFinal = System.nanoTime();
+        System.out.println("MergeSort:"+ (TiempoDeInicio-TiempoFinal)+ " nanosegundos");
+
+        TiempoDeInicio = System.nanoTime();
+        quikSort.sort(numeros, 0 , numeros.length-1);
+        TiempoFinal = System.nanoTime();
+        System.out.println("QuikSort:"+ (TiempoDeInicio-TiempoFinal)+ " nanosegundos");
+
+        TiempoDeInicio = System.nanoTime();
+        radixSort.maximo(numeros);
+        TiempoFinal = System.nanoTime();
+        System.out.println("RadixSort:"+ (TiempoDeInicio-TiempoFinal)+ " nanosegundos");
+
+        
         }
 
     
