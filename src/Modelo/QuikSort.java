@@ -13,9 +13,9 @@ public class QuikSort {
      * @param derecha
      * @return
      */
-    private static int particion(int arreglo[], int izquierda, int derecha) {
+    private static Integer particion(Integer arreglo[], Integer izquierda, Integer derecha) {
         // en la primera corrida, izquierda es 0 y derecha sera lengt-1
-        int pivote = arreglo[izquierda];
+        Integer pivote = arreglo[izquierda];
         while (true) {
             while (arreglo[izquierda] < pivote) {
                 izquierda++;
@@ -41,9 +41,9 @@ public class QuikSort {
      * @param izquierda
      * @param derecha
      */
-    public static void sort(int arreglo[], int izquierda, int derecha) {
+    public static void sort(Integer arreglo[], Integer izquierda, Integer derecha) {
         if (izquierda < derecha) {
-            int indiceParticion = particion(arreglo, izquierda, derecha);
+            Integer indiceParticion = particion(arreglo, izquierda, derecha);
             sort(arreglo, izquierda, indiceParticion);
             sort(arreglo, indiceParticion + 1, derecha);
         }

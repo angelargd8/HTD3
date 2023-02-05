@@ -20,8 +20,7 @@ public class Main {
     public static void main(String[] args) {
         Controlador controlador = new Controlador();
         //esto estaba en mostrar menu:
-        /*controlador.SortFileGnome();
-        System.out.println("Has realizado el Gnome Sort");*/
-        
+        controlador.CorrerSorts();
+
     }
 }

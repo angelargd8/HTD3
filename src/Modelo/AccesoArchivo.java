@@ -5,7 +5,8 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class AccesoArchivo {
-    String ruta = "Datos.txt";
+    String ruta = "src\\Datos.txt";
+    
     String texto;
     
     public String numeros(){
@@ -42,12 +43,16 @@ public class AccesoArchivo {
             String lineas;
             int contLineas = 0;
             while((lineas = br.readLine()) != null){
+
                 if(cantidadNumeros != contLineas){
+
                     n[contLineas] = Integer.parseInt(lineas);
                 }else{
+
                     break;
                 }
                 contLineas++;
+
             }
         } catch (Exception e) {
             throw new Error("Error al leer el archivo");

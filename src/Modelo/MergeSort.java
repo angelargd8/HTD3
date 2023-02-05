@@ -39,7 +39,7 @@ public class MergeSort implements ISort{
         return Arrayxd;
     }
 
-    public void MergeSortt(Integer[] Arrayxd){
+    public void MergeSortt(Comparable[] Arrayxd){
         PunteroInicio=0;
         PunteroFinal=Arrayxd.length;
         Mitad=(Arrayxd.length/2);
@@ -70,10 +70,10 @@ public class MergeSort implements ISort{
         //mergear 2
 
         Merge(Arrayxd, ArrayMitad1, ArrayMitad2);
-        System.out.println(""+Arrays.toString(Arrayxd));
+        //System.out.println(""+Arrays.toString(Arrayxd));
 
     }
-    private static void Merge(Integer[] Arrayxd, Integer[] arrayMitad1, Integer[] arrayMitad2 ){
+    private static void Merge(Comparable[] Arrayxd, Integer[] arrayMitad1, Integer[] arrayMitad2 ){
 
         int Mitad1= arrayMitad1.length; //iz
         int Mitad2= arrayMitad2.length;  //der 
