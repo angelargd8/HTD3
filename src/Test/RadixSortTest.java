@@ -13,9 +13,9 @@ class RadixSortTest {
     @Test
     void sort() {
         RadixSort rs = new RadixSort();
-        Comparable[] n = {9,5,3,1,2};
-        Comparable[] ordenado = {1,2,3,5,9};
-        assertEquals(Arrays.stream(ordenado).toList(), Arrays.stream().toList());
+        Comparable[] n = {10,5,3,1,2, 9};
+        Comparable[] ordenado = {1,2,3,5,9,10};
+        assertEquals(Arrays.stream(ordenado).toList(), Arrays.stream(rs.sort(n)).toList());
     }
 
 }

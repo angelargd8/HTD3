@@ -60,7 +60,7 @@ public class Controlador{
         System.out.println("QuikSort:"+ (TiempoDeInicio-TiempoFinal)+ " nanosegundos");
 
         TiempoDeInicio = System.nanoTime();
-        radixSort.maximo(numeros);
+        radixSort.sort(numeros);
         TiempoFinal = System.nanoTime();
         System.out.println("RadixSort:"+ (TiempoDeInicio-TiempoFinal)+ " nanosegundos");
 

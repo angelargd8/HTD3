@@ -34,7 +34,7 @@ public class RadixSort implements ISort {
     }
     
     public void countingS(Comparable[] list,int largo, int numeroPornumero, int maximo){
-        int[] contador = new int[maximo];
+        int[] contador = new int[5010];
         int[] respuesta = new int[largo];
         for(int i =0;i<largo;i++){
             contador[i] = 0;
